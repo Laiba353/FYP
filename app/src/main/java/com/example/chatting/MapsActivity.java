@@ -34,6 +34,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.maps.android.SphericalUtil;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -57,6 +58,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     String str;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
+    Double distance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +100,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     }
                     Address address=addressList.get(0);
                     latLng2=new LatLng(address.getLatitude(),address.getLongitude());
+                    distance = SphericalUtil.computeDistanceBetween(latLng1, latLng2);
+                    distance=(distance/1000);//km
                     map.addMarker(new MarkerOptions().position(latLng2).title("Your Drop Off Location"));
                     map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng2,10));
                pp=new PolylineOptions().clickable(true).add(latLng1,latLng2);
@@ -173,7 +177,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    public void SelectRider(View v)
+    public void Continue(View v)
     {
         db = dbHelper.getReadableDatabase();
         String[] colm={DatabaseContract.Customers.COL_NAME,DatabaseContract.Customers.COL_CONTACT};
@@ -186,7 +190,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
        String s1=c.getString(0);
         String s2=c.getString(1);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference().child("Orderlocation").child("Location");
+        DatabaseReference ref = database.getReference().child("Orderlocation").child(s2);
 
 
         Map<String, Object> data = new HashMap<>();
@@ -194,11 +198,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         data.put("DropOffLoc", str);
         data.put("CustomerName",s1);
         data.put("CustomerContact",s2);
+        data.put("Cancel","Unknown");
         ref.setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 //
                 Log.i("tag", "Location update saved");
+                Intent intn=new Intent(MapsActivity.this,OrderPage.class);
+                intn.putExtra("milkman",milkman);
+                intn.putExtra("customer",customer);
+                intn.putExtra("Distance",distance );
+                intn.putExtra("PickUp",milkmanLoc);
+                intn.putExtra("DropOff",str);
+
+                startActivity(intn);
             }
         });
     }

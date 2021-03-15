@@ -9,13 +9,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class history2 extends BaseAdapter {
+public class OrderListHolder extends BaseAdapter {
 
     private Activity context;
     ArrayList<history1> customer;
 
 
-    public history2(Activity context, ArrayList cust) {
+    public OrderListHolder(Activity context, ArrayList cust) {
         // super(context, R.layout.row_item, countries);
         this.context = context;
         this.customer=cust;
@@ -31,9 +31,9 @@ public class history2 extends BaseAdapter {
         View row=convertView;
 
         LayoutInflater inflater = context.getLayoutInflater();
-       ViewHolder vh;
+        history2.ViewHolder vh;
         if(convertView==null) {
-            vh=new ViewHolder();
+            vh=new history2.ViewHolder();
             row = inflater.inflate(R.layout.activity_history2, null, true);
             vh.txt1 = (TextView) row.findViewById(R.id.text1);
             vh.txt2 = (TextView) row.findViewById(R.id.text2);
@@ -43,13 +43,13 @@ public class history2 extends BaseAdapter {
             row.setTag(vh);
         }
         else {
-            vh = (ViewHolder) convertView.getTag();
+            vh = (history2.ViewHolder) convertView.getTag();
         }
 
-        vh.txt2.setText(""+customer.get(position).getName());
-        vh.txt1.setText(""+customer.get(position).getOrderNo());
-        vh.txt3.setText(""+customer.get(position).getQuantity());
-        vh.txt4.setText(""+customer.get(position).getPrice());
+        vh.txt2.setText("Contact no :"+customer.get(position).getName());
+        vh.txt1.setText("Customer Name:"+customer.get(position).getOrderNo());
+        vh.txt3.setText("Pick Up Loc :"+customer.get(position).getQuantity());
+        vh.txt4.setText("Drop Off Loc : "+customer.get(position).getPrice());
         return  row;
     }
 

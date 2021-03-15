@@ -41,7 +41,7 @@ public class CreateMAccount extends AppCompatActivity {
     Resources resources;
     TextView createaccount, details;
     Button btn;
-    String str;
+    String str,check;
 
 
 
@@ -54,6 +54,7 @@ public class CreateMAccount extends AppCompatActivity {
         dbHelper = new DatabaseHelper(this);
 
 
+
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         contact = findViewById(R.id.contactnumber);
@@ -62,7 +63,7 @@ public class CreateMAccount extends AppCompatActivity {
         btn=findViewById(R.id.btn);
         Intent intent = getIntent();
         String languages = intent.getExtras().getString("language");
-
+        check= intent.getStringExtra("Check");
         if(languages.equals("ENGLISH"))
         {
 
@@ -120,6 +121,8 @@ public class CreateMAccount extends AppCompatActivity {
             Toast.makeText(this, "Please Fill All Fields", Toast.LENGTH_SHORT).show();
         } else {
 
+if(check=="MilkMan")
+{
 
             ContentValues values = new ContentValues();
             values.put(DatabaseContract.MilkMan.COL_NAME, Name);
@@ -138,6 +141,59 @@ public class CreateMAccount extends AppCompatActivity {
             intent.putExtra("val1", Email);
             startActivity(intent);
 
+}else if(check=="Customer")
+{
+    ContentValues values = new ContentValues();
+    values.put(DatabaseContract.Customers.COL_NAME, Name);
+    values.put(DatabaseContract.Customers.COL_CONTACT, ContactNumber);
+    values.put(DatabaseContract.Customers.COL_LOCATION, Location);
+    values.put(DatabaseContract.Customers.COL_EMAIL, Email);
+    values.put(DatabaseContract.Customers.COL_PASSWORD, Password);
+    long newRowId = db.insert(DatabaseContract.Customers.TABLE_NAME, null, values);
+    if (newRowId > 0) {
+        Toast.makeText(this, "New Record Inserted: " + newRowId, Toast.LENGTH_LONG).show();
+    }
+    String[] columns = {DatabaseContract.Customers._ID, DatabaseContract.Customers.COL_EMAIL};
+    Cursor c = db.query(DatabaseContract.Customers.TABLE_NAME, columns, DatabaseContract.Customers.COL_EMAIL + "=?", new String[]{Email}
+            , null, null, null, null);
+    if (c.getCount() > 0) {
+        c.moveToFirst();
+        String vall = String.valueOf(c.getLong(0));
+        Toast.makeText(getApplicationContext(), "Record id" + vall, Toast.LENGTH_SHORT).show();
+
+        db.close();
+
+        Intent intent = new Intent(this, MilkManList.class);
+        intent.putExtra("val", vall);
+        startActivity(intent);
+    }
+}else
+{
+    ContentValues values = new ContentValues();
+    values.put(DatabaseContract.Riders.COL_NAME, Name);
+    values.put(DatabaseContract.Riders.COL_CONTACT, ContactNumber);
+    values.put(DatabaseContract.Riders.COL_LOCATION, Location);
+    values.put(DatabaseContract.Riders.COL_EMAIL, Email);
+    values.put(DatabaseContract.Riders.COL_PASSWORD, Password);
+    long newRowId = db.insert(DatabaseContract.Riders.TABLE_NAME, null, values);
+    if (newRowId > 0) {
+        Toast.makeText(this, "New Record Inserted: " + newRowId, Toast.LENGTH_LONG).show();
+    }
+    String[] columns = {DatabaseContract.Riders._ID, DatabaseContract.Riders.COL_EMAIL};
+    Cursor c = db.query(DatabaseContract.Riders.TABLE_NAME, columns, DatabaseContract.Riders.COL_EMAIL + "=?", new String[]{Email}
+            , null, null, null, null);
+    if (c.getCount() > 0) {
+        c.moveToFirst();
+        String vall = String.valueOf(c.getLong(0));
+        Toast.makeText(getApplicationContext(), "Record id" + vall, Toast.LENGTH_SHORT).show();
+
+        db.close();
+
+        Intent intent = new Intent(this, orderlist.class);
+        intent.putExtra("val", vall);
+        startActivity(intent);
+    }
+}
         }
 
 

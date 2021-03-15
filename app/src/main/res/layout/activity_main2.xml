@@ -61,7 +61,7 @@ android:orientation="vertical"
             android:text="Milk Man"
             android:id="@+id/milkman"
             android:layout_marginLeft="20dp"
-
+            android:onClick="Login"
 
             />
         <Button
@@ -71,6 +71,7 @@ android:orientation="vertical"
             android:text="Customer"
             android:id="@+id/customer"
             android:layout_marginLeft="20dp"
+            android:onClick="Login"
 
             />
 
@@ -80,7 +81,7 @@ android:orientation="vertical"
             android:id="@+id/rider"
             android:text="Rider"
             android:layout_marginLeft="20dp"
-            android:onClick="Onrider"
+            android:onClick="Login"
             ></Button>
         <Button
             android:layout_width="wrap_content"

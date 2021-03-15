@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity3">
+    <fragment
+
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity3" />
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="230dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="370dp"
+        android:id="@+id/messageBox"
+        android:background="@color/grey"
+android:layout_marginBottom="10dp"
+
+        >
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/cname"
+            android:text="Rider name"
+            android:textColor="@color/black"
+            ></TextView>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="70dp"
+            android:textSize="14dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/ccontact"
+            android:layout_below="@id/cname"
+            android:textColor="@color/black"
+            android:text="Rider contact"
+            ></TextView>
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/list"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="90dp"
+            ></ListView>
+        <EditText
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/edt"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/shape"
+            android:hint="Type Your Text . . ."
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_marginLeft="90dp"
+
+            ></EditText>
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="onbtn"
+            android:src="@drawable/sendbtn"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+
+
+            ></ImageButton>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oder Successfull"
+            android:textSize="18dp"
+            android:id="@+id/succesfull"
+            android:onClick="Successfull"
+
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            ></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel Order"
+            android:textSize="18dp"
+            android:id="@+id/cancel"
+            android:onClick="CancelOrder"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            ></Button>
+    </RelativeLayout>
+</RelativeLayout>

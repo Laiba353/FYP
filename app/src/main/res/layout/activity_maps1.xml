@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".MapsActivity1"
+
+    >
+
+    <fragment
+
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity1" />
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="230dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="370dp"
+        android:id="@+id/messageBox"
+        android:background="@color/grey"
+        android:layout_marginBottom="10dp"
+        android:visibility="invisible"
+
+        >
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/cname"
+            android:text="Rider name"
+            android:textColor="@color/black"
+            ></TextView>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="70dp"
+            android:textSize="14dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/ccontact"
+            android:layout_below="@id/cname"
+            android:textColor="@color/black"
+            android:text="Rider contact"
+            ></TextView>
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/list"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="90dp"
+            ></ListView>
+        <EditText
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/edt"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/shape"
+            android:hint="Type Your Text . . ."
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:layout_marginLeft="90dp"
+
+            ></EditText>
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="onbtn"
+            android:src="@drawable/sendbtn"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+
+
+            ></ImageButton>
+    </RelativeLayout>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Confirm Ride"
+    android:textSize="22dp"
+    android:id="@+id/confirm"
+    android:onClick="ConfirmRide"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="10dp"
+    ></Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ride Complete"
+        android:textSize="22dp"
+        android:id="@+id/Complete"
+        android:onClick="RideComplete"
+        android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        ></Button>
+
+</RelativeLayout>

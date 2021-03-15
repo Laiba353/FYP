@@ -5,7 +5,10 @@ public class history1 {
     String Quantity;
     String orderNo;
     String Price;
+private history1()
+{
 
+}
     public history1(String nme,String cont,String ord,String prc) {
         this.name = nme;
         this.Quantity = cont;

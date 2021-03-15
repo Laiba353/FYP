@@ -51,7 +51,7 @@ public class RiderSingIn extends AppCompatActivity {
                 tt.setText(str3);
                 tt.setVisibility(View.VISIBLE);
                 db.close();
-                Intent intent = new Intent(RiderSingIn.this, RiderMain.class);
+                Intent intent = new Intent(RiderSingIn.this, orderlist.class);
                 intent.putExtra("val", str3);
                 startActivity(intent);
             }

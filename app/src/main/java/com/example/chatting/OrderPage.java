@@ -21,7 +21,9 @@ String str,str1;
 EditText ed1,ed2,ed3;
 DatabaseHelper dbh;
 SQLiteDatabase db;
-long prc;
+double prc;
+double distance;
+    String pickup,dropoff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,9 @@ long prc;
         Intent intn=getIntent();
         str=intn.getStringExtra("milkman");
         str1=intn.getStringExtra("customer");
+        pickup=intn.getStringExtra("PickUp");
+        dropoff=intn.getStringExtra("DropOff");
+        distance=intn.getDoubleExtra("Distance",0.00);
         dbh=new DatabaseHelper(this);
         ed1=(EditText)findViewById(R.id.edt1);
         ed2=(EditText)findViewById(R.id.edt2);
@@ -47,7 +52,9 @@ long prc;
         cr.moveToFirst();
         long price=cr.getLong(0);
         db.close();
+        double distn=(distance*10)+50;
         prc=price*qnt;
+        prc=prc+distn;
         ed3.setText("Total Price : "+prc);
     }
     public void onconfirm(View v)
@@ -85,5 +92,11 @@ long prc;
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         mBuilder.setContentIntent(pi);
         mNotificationManager.notify(0, mBuilder.build());
+        Intent intentt=new Intent(OrderPage.this, MapsActivity3.class);
+        intentt.putExtra("PickUp",pickup);
+        intentt.putExtra("DropOff",dropoff);
+        intentt.putExtra("Id",str+str1);
+        intentt.putExtra("customerId",str1);
+        startActivity(intentt);
     }
 }

@@ -12,20 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatting"
         android:usesCleartextTraffic="true">
+        <activity android:name=".OwnerMain"></activity>
+        <activity android:name=".RiderAdapter" />
+        <activity
+            android:name=".MapsActivity3"
+            android:label="Map" />
+        <activity android:name=".orderlist" />
+
         <service
             android:name=".LocatioTrackerService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
-        <activity android:name=".RiderMain" />
         <activity android:name=".RiderSingIn" />
         <activity android:name=".createRaccount" />
         <activity
             android:name=".MapsActivity1"
-            android:label="Map"></activity>
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:label="Map" />
         <activity
             android:name=".MapsActivity"
             android:label="Map" />

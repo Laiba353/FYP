@@ -54,8 +54,8 @@
         android:id="@+id/selectRider"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Select Rider"
+        android:text="Continue"
         android:layout_marginBottom="20dp"
-        android:onClick="SelectRider"
+        android:onClick="Continue"
         ></Button>
 </RelativeLayout>

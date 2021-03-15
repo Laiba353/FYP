@@ -20,7 +20,7 @@ public class LogInPage extends AppCompatActivity {
     EditText name,password;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
-    String val;
+    String val,check;
     Context context;
     Resources resources;
     String str;
@@ -40,6 +40,7 @@ public class LogInPage extends AppCompatActivity {
 
        Intent intent = getIntent();
         String languages = intent.getExtras().getString("language");
+        check=intent.getStringExtra("Check");
         Toast.makeText(this, languages, Toast.LENGTH_SHORT).show();
         if(languages.equals("ENGLISH"))
         {
@@ -80,8 +81,10 @@ public class LogInPage extends AppCompatActivity {
         createaccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LogInPage.this,CreateMAccount.class));
-                finish();
+                Intent intent1=new Intent(LogInPage.this,CreateMAccount.class);
+                intent1.putExtra("Check",check);
+                intent1.putExtra("language",str);
+                startActivity(intent1);
             }
         });
 
@@ -95,21 +98,53 @@ public class LogInPage extends AppCompatActivity {
         }
         else
         {
-            String[] columns= {"Email","Name","Password"};
-            String[] values={name.getText().toString(),password.getText().toString()};
-            Cursor cursor=db.query("MilkMan",columns,"Name=? AND Password=?",values,null,null,null);
-            if (cursor != null)
-            {
-                if(cursor.moveToFirst())
-                {
-                   val= cursor.getString(0);
-                    Toast.makeText(this, "values "+val, Toast.LENGTH_SHORT).show();
-                   Intent intent=new Intent(LogInPage.this, AddMilkInfo.class);
-                    intent.putExtra("val1",val);
-                    startActivity(intent);
+            String[] columns = {"Email", "Name", "Password"};
+            String[] values = {name.getText().toString(), password.getText().toString()};
+            if(check=="MilkMan") {
 
+                Cursor cursor = db.query("MilkMan", columns, "Name=? AND Password=?", values, null, null, null);
+                if (cursor != null) {
+                    if (cursor.moveToFirst()) {
+                        val = cursor.getString(0);
+                        Toast.makeText(this, "values " + val, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LogInPage.this, AddMilkInfo.class);
+                        intent.putExtra("val1", val);
+                        startActivity(intent);
+
+                    } else {
+                        Toast.makeText(LogInPage.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else {
+            }else if(check=="Customer")
+            {
+                Cursor cr=db.query(DatabaseContract.Customers.TABLE_NAME,columns,"Email=? AND Password=?",values,null,null,null);
+                if (cr.getCount() > 0) {
+                    cr.moveToFirst();
+                   // bo = true;
+                    val = String.valueOf(cr.getLong(0));
+                   // tt.setText(str3);
+                   // tt.setVisibility(View.VISIBLE);
+                    db.close();
+                    Intent intent = new Intent(LogInPage.this,MilkManList.class);
+                    intent.putExtra("val",  val);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(LogInPage.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else{
+                Cursor cr=db.query(DatabaseContract.Riders.TABLE_NAME,columns,"Email=? AND Password=?",values,null,null,null);
+                if (cr.getCount() > 0) {
+                    cr.moveToFirst();
+                    // bo = true;
+                    val = String.valueOf(cr.getLong(0));
+                    // tt.setText(str3);
+                    // tt.setVisibility(View.VISIBLE);
+                    db.close();
+                    Intent intent = new Intent(LogInPage.this,orderlist.class);
+                    intent.putExtra("val",  val);
+                    startActivity(intent);
+                } else {
                     Toast.makeText(LogInPage.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
                 }
             }
