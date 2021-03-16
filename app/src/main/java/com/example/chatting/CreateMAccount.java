@@ -71,11 +71,11 @@ public class CreateMAccount extends AppCompatActivity {
             resources = context.getResources();
             createaccount.setText(resources.getString(R.string.account1));
             details.setText(resources.getString(R.string.details));
-            name.setText(resources.getString(R.string.name1));
-            location.setText(resources.getString(R.string.location));
-            email.setText(resources.getString(R.string.email1));
-            password.setText(resources.getString(R.string.password1));
-            contact.setText(resources.getString(R.string.number));
+            name.setHint(resources.getString(R.string.name1));
+            location.setHint(resources.getString(R.string.location));
+            email.setHint(resources.getString(R.string.email1));
+            password.setHint(resources.getString(R.string.password1));
+            contact.setHint(resources.getString(R.string.number));
             btn.setText(resources.getString(R.string.savedetails));
 
 
@@ -94,11 +94,11 @@ public class CreateMAccount extends AppCompatActivity {
             resources = context.getResources();
             createaccount.setText(resources.getString(R.string.account1));
             details.setText(resources.getString(R.string.details));
-            name.setText(resources.getString(R.string.name1));
-            location.setText(resources.getString(R.string.location));
-            email.setText(resources.getString(R.string.email1));
-            password.setText(resources.getString(R.string.password1));
-            contact.setText(resources.getString(R.string.number));
+            name.setHint(resources.getString(R.string.name1));
+            location.setHint(resources.getString(R.string.location));
+            email.setHint(resources.getString(R.string.email1));
+            password.setHint(resources.getString(R.string.password1));
+            contact.setHint(resources.getString(R.string.number));
             btn.setText(resources.getString(R.string.savedetails));
 
             str="اردو";
