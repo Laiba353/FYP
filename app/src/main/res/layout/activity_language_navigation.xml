@@ -56,5 +56,6 @@
         android:layout_height="wrap_content"
         android:text="go"
         android:onClick="function"
+        android:layout_marginTop="10dp"
         />
 </LinearLayout>
