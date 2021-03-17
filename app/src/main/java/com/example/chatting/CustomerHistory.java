@@ -2,7 +2,9 @@ package com.example.chatting;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -26,12 +28,17 @@ public class CustomerHistory extends AppCompatActivity {
     ListView listView;
     String str1,str2,str3,str4,str5;
     String num;
+    Context context;
+    Resources resources;
+    String str;
+    String languages;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_history);
-          Intent it=getIntent();
-          num=it.getStringExtra("var");
+        Intent it=getIntent();
+        num=it.getStringExtra("var");
+        languages = it.getExtras().getString("language");
 
         activity = this;
         dbHelper = new DatabaseHelper(this);
@@ -39,7 +46,7 @@ public class CustomerHistory extends AppCompatActivity {
 
         tv=(TextView)findViewById(R.id.txt);
         String[] columns={DatabaseContract.OrderT._ID, DatabaseContract.OrderT.COL_PLACED_TO, DatabaseContract.OrderT.COL_QUANTITY,
-        DatabaseContract.OrderT.COL_PRICE};
+                DatabaseContract.OrderT.COL_PRICE};
         Cursor c = db.query(DatabaseContract.OrderT.TABLE_NAME,columns, DatabaseContract.OrderT.COL_PLACED_BY + "=?", new String[] {num}
                 , null, null, null, null);
         if (c.getCount() > 0)  {
@@ -80,7 +87,25 @@ public class CustomerHistory extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"No Record exist",Toast.LENGTH_LONG).show();
             //history1 mObj = new history1("No ","Recods ","Exist ","here ");
             //customer.add(mObj);
-            tv.setText("Your History is Empty");
+            if(languages.equals("ENGLISH"))
+            {
+
+                context = LocalHelper.setLocale(CustomerHistory.this, "en");
+                resources = context.getResources();
+
+                tv.setText("Your History is Empty");
+            }
+
+            if(languages.equals("اردو"))
+            {
+
+                context = LocalHelper.setLocale(CustomerHistory.this, "an");
+                resources = context.getResources();
+                tv.setText("آپ کی  ہسٹری  خالی ہے");
+
+
+            }
+
             tv.setTextSize(32);
         }
         db.close();
@@ -88,4 +113,4 @@ public class CustomerHistory extends AppCompatActivity {
 
 
     }
-    }
+}

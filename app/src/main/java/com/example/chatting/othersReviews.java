@@ -3,7 +3,9 @@ package com.example.chatting;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -23,6 +25,9 @@ public class othersReviews extends AppCompatActivity {
     ArrayList<review2> rev=new ArrayList<review2>();
     String str,str1,str2,ss;
     TextView tv;
+    Context context;
+    Resources resources;
+    String languages;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +38,26 @@ public class othersReviews extends AppCompatActivity {
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getReadableDatabase();
         tv=(TextView)findViewById(R.id.txt) ;
-        tv.setText( " Reviews For "+ss);
+        Intent inten = getIntent();
+        languages = inten.getExtras().getString("language");
+        if(languages.equals("ENGLISH")) {
+
+            context = LocalHelper.setLocale(othersReviews.this, "en");
+            resources = context.getResources();
+            tv.setText(resources.getString(R.string.reviews));
+
+        }
+
+        if(languages.equals("اردو")) {
+
+            context = LocalHelper.setLocale(othersReviews.this, "an");
+            resources = context.getResources();
+            tv.setText(resources.getString(R.string.reviews));
+
+        }
+
+
+
         activity = this;
         lv = (ListView) findViewById(R.id.listview);
         String[] colm={DatabaseContract.Review.COL_PLACED_BY,DatabaseContract.Review.COL_REVIEW};
