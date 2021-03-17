@@ -59,7 +59,7 @@ public class MilkManDetails extends AppCompatActivity {
 
             context = LocalHelper.setLocale(MilkManDetails.this, "en");
             resources = context.getResources();
-            heading.setText(resources.getString(R.string.ListOfMilkMans));
+            heading.setText(resources.getString(R.string.milkmandetail));
             name.setText(resources.getString(R.string.named));
             location.setText(resources.getString(R.string.locationd));
             number.setHint(resources.getString(R.string.numberd));
@@ -74,7 +74,7 @@ public class MilkManDetails extends AppCompatActivity {
         {
             context = LocalHelper.setLocale(MilkManDetails.this, "an");
             resources = context.getResources();
-            heading.setText(resources.getString(R.string.ListOfMilkMans));
+            heading.setText(resources.getString(R.string.milkmandetail));
             name.setText(resources.getString(R.string.named));
             location.setText(resources.getString(R.string.locationd));
             number.setHint(resources.getString(R.string.numberd));
@@ -123,6 +123,7 @@ startActivity(intn);
         Intent intnte=new Intent(this,review.class);
         intnte.putExtra("milkman",str);
         intnte.putExtra("customer",str2);
+        intnte.putExtra("language",lang);
         startActivity(intnte);
     }
 }

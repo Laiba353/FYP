@@ -19,7 +19,7 @@
         android:id="@+id/edt"
         android:layout_alignParentLeft="true"
         android:background="@drawable/shape"
-        android:hint="Type Your Review . . ."
+        android:hint="Type Your Review"
         android:textColor="@color/black"
         android:padding="10dp"
 

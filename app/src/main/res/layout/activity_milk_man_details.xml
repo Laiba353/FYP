@@ -136,14 +136,17 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
             android:text="Place Order"
+            android:textStyle="bold"
             android:onClick="onplace"
-            android:id="@+id/placeorder"/>
+            android:id="@+id/placeorder"
+            android:layout_marginTop="20dp"/>
         <Button
-          android:layout_marginTop="20dp"
+          android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape1"
             android:text="Give Review"
+            android:textStyle="bold"
             android:id="@+id/givereview"
             android:onClick="onReview"
             />
@@ -157,6 +160,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
 
         >
         <ImageView

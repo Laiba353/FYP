@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -24,6 +26,10 @@ ListView lv;
     Activity activity;
     ArrayList<ReviewList> rev=new ArrayList<ReviewList>();
     String str,str1,str2;
+    String lang;
+    Context context;
+    Resources resources;
+    String languages;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +37,34 @@ ListView lv;
         Intent intent=getIntent();
         str1=intent.getStringExtra("milkman");
         str2=intent.getStringExtra("customer");
+        languages= intent.getExtras().getString("language");
+
         et=(EditText)findViewById(R.id.edt);
-        getSupportActionBar().setTitle("Reviews");
+
+        if(languages.equals("ENGLISH"))
+        {
+
+            context = LocalHelper.setLocale(review.this, "en");
+            resources = context.getResources();
+            et.setText(resources.getString(R.string.typereview));
+            getSupportActionBar().setTitle("Reviews");
+
+            lang="ENGLISH";
+        }
+        if(languages.equals("اردو"))
+        {
+            context = LocalHelper.setLocale(review.this, "an");
+            resources = context.getResources();
+            et.setText(resources.getString(R.string.typereview));
+            getSupportActionBar().setTitle("جائزے");
+            lang="اردو";
+
+        }
+
+
+
+
+
         activity = this;
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getReadableDatabase();
