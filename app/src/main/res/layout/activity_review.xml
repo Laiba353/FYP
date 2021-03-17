@@ -22,7 +22,6 @@
         android:hint="Type Your Review"
         android:textColor="@color/black"
         android:padding="10dp"
-        android:layout_marginLeft="5dp"
 
 
         ></EditText>
