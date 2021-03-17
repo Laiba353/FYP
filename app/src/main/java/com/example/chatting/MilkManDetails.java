@@ -60,14 +60,14 @@ public class MilkManDetails extends AppCompatActivity {
             context = LocalHelper.setLocale(MilkManDetails.this, "en");
             resources = context.getResources();
             heading.setText(resources.getString(R.string.ListOfMilkMans));
-            name.setHint(resources.getString(R.string.searchbylocation));
-            location.setText(resources.getString(R.string.ListOfMilkMans));
-            number.setHint(resources.getString(R.string.searchbylocation));
-            quantily.setText(resources.getString(R.string.ListOfMilkMans));
-            quality.setText(resources.getString(R.string.searchbylocation));
-            price.setText(resources.getString(R.string.searchbylocation));
-            placeorder.setText(resources.getString(R.string.searchbylocation));
-            givereview.setText(resources.getString(R.string.searchbylocation));
+            name.setText(resources.getString(R.string.named));
+            location.setText(resources.getString(R.string.locationd));
+            number.setHint(resources.getString(R.string.numberd));
+            quantily.setText(resources.getString(R.string.quantityd));
+            quality.setText(resources.getString(R.string.qualityd));
+            price.setText(resources.getString(R.string.priced));
+            placeorder.setText(resources.getString(R.string.placeorder));
+            givereview.setText(resources.getString(R.string.givereview));
             lang="ENGLISH";
         }
         if(languages.equals("اردو"))
@@ -75,14 +75,14 @@ public class MilkManDetails extends AppCompatActivity {
             context = LocalHelper.setLocale(MilkManDetails.this, "an");
             resources = context.getResources();
             heading.setText(resources.getString(R.string.ListOfMilkMans));
-            name.setHint(resources.getString(R.string.searchbylocation));
-            location.setText(resources.getString(R.string.ListOfMilkMans));
-            number.setHint(resources.getString(R.string.searchbylocation));
-            quantily.setText(resources.getString(R.string.ListOfMilkMans));
-            quality.setText(resources.getString(R.string.searchbylocation));
-            price.setText(resources.getString(R.string.searchbylocation));
-            placeorder.setText(resources.getString(R.string.searchbylocation));
-            givereview.setText(resources.getString(R.string.searchbylocation));
+            name.setText(resources.getString(R.string.named));
+            location.setText(resources.getString(R.string.locationd));
+            number.setHint(resources.getString(R.string.numberd));
+            quantily.setText(resources.getString(R.string.quantityd));
+            quality.setText(resources.getString(R.string.qualityd));
+            price.setText(resources.getString(R.string.priced));
+            placeorder.setText(resources.getString(R.string.placeorder));
+            givereview.setText(resources.getString(R.string.givereview));
             lang="اردو";
 
         }
