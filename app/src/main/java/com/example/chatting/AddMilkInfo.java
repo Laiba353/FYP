@@ -1,5 +1,6 @@
 package com.example.chatting;
 
+
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ContentValues;
@@ -34,6 +35,7 @@ public class AddMilkInfo extends AppCompatActivity {
     Button savedetails;
     MenuItem SearchOrders, OtherMilkMans,Reviews;
     String languages;
+    String type;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +82,9 @@ public class AddMilkInfo extends AppCompatActivity {
             Milkquantity.setHint(resources.getString(R.string.quantity));
             heading.setText(resources.getString(R.string.heading1));
             savedetails.setText(resources.getString(R.string.savedetails));
+            cowmilk.setText(resources.getString(R.string.cowmilk));
+            goatmilk.setText(resources.getString(R.string.goatmilk));
+            baffalomilk.setText(resources.getString(R.string.baffalomillk));
 
 
 
@@ -95,6 +100,9 @@ public class AddMilkInfo extends AppCompatActivity {
             Milkquantity.setHint(resources.getString(R.string.quantity));
             heading.setText(resources.getString(R.string.heading1));
             savedetails.setText(resources.getString(R.string.savedetails));
+            cowmilk.setText(resources.getString(R.string.cowmilk));
+            goatmilk.setText(resources.getString(R.string.goatmilk));
+            baffalomilk.setText(resources.getString(R.string.baffalomillk));
 
 
 
@@ -118,7 +126,18 @@ public class AddMilkInfo extends AppCompatActivity {
         int checkid=RadioGroup.getCheckedRadioButtonId();
         RadioButton radioButton=findViewById(checkid);
         String category= radioButton.getText().toString();
-
+        if(category.equals("گائے کا دودھ"))
+        {
+            type="Cow Milk";
+        }
+        if(category.equals(" بکری کا دودھ"))
+        {
+            type="Goat Milk";
+        }
+        if(category.equals(" بھینس کا دودھ"))
+        {
+            type="Baffalo Milk";
+        }
         if(quantity==0 || price==0 )
         {
             Toast.makeText(this, "Please Fill All Fields", Toast.LENGTH_SHORT).show();
@@ -128,7 +147,7 @@ public class AddMilkInfo extends AppCompatActivity {
             ContentValues args = new ContentValues();
             args.put(DatabaseContract.MilkMan.COL_QUANTITY,quantity);
             args.put(DatabaseContract.MilkMan.COL_PRICE,price);
-            args.put(DatabaseContract.MilkMan.COL_QUALITY,category);
+            args.put(DatabaseContract.MilkMan.COL_QUALITY,type);
             String[] wherearg={str};
             Integer count= db.update(DatabaseContract.MilkMan.TABLE_NAME, args, DatabaseContract.MilkMan.COL_EMAIL + "=?",wherearg);
             if (count > 0) {
