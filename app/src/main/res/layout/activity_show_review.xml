@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     android:layout_margin="30dp"
     android:orientation="vertical"
-    tools:context=".showReview">
+    tools:context=".showReview"
+    android:background="@color/black">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="36dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:text="Reviews"
         android:layout_gravity="center_horizontal"
         android:id="@+id/txt"
@@ -20,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listview"
+        android:background="@color/white"
 
         ></ListView>
 </LinearLayout>
