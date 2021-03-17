@@ -98,6 +98,5 @@ public class showReview extends AppCompatActivity {
         }
         db.close();
 
-
     }
 }
