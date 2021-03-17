@@ -109,6 +109,7 @@ public class LogInPage extends AppCompatActivity {
                         val = cursor.getString(0);
                         Toast.makeText(this, "values " + val, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LogInPage.this, AddMilkInfo.class);
+                        intent.putExtra("language",str);
                         intent.putExtra("val1", val);
                         startActivity(intent);
 
@@ -128,6 +129,7 @@ public class LogInPage extends AppCompatActivity {
                     db.close();
                     Intent intent = new Intent(LogInPage.this,MilkManList.class);
                     intent.putExtra("val",  val);
+                    intent.putExtra("language",str);
                     startActivity(intent);
                 } else {
                     Toast.makeText(LogInPage.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
@@ -144,6 +146,7 @@ public class LogInPage extends AppCompatActivity {
                     db.close();
                     Intent intent = new Intent(LogInPage.this,orderlist.class);
                     intent.putExtra("val",  val);
+                    intent.putExtra("language",str);
                     startActivity(intent);
                 } else {
                     Toast.makeText(LogInPage.this, "Wrong email or password", Toast.LENGTH_SHORT).show();

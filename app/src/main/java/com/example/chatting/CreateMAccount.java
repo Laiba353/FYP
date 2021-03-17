@@ -138,6 +138,7 @@ if(check.equals("MilkMan"))
 
             db.close();
             Intent intent = new Intent(this, AddMilkInfo.class);
+    intent.putExtra("language",str);
             intent.putExtra("val1", Email);
             startActivity(intent);
 
@@ -164,6 +165,7 @@ if(check.equals("MilkMan"))
         db.close();
 
         Intent intent = new Intent(this, MilkManList.class);
+        intent.putExtra("language",str);
         intent.putExtra("val", vall);
         startActivity(intent);
     }
@@ -191,6 +193,7 @@ if(check.equals("MilkMan"))
 
         Intent intent = new Intent(this, orderlist.class);
         intent.putExtra("val", vall);
+        intent.putExtra("language",str);
         startActivity(intent);
     }
 }
