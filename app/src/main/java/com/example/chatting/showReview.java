@@ -3,13 +3,16 @@ package com.example.chatting;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,12 +24,34 @@ public class showReview extends AppCompatActivity {
     Activity activity;
     ArrayList<review2> rev=new ArrayList<review2>();
     String str,str1,str2;
+    TextView text;
+    Context context;
+    Resources resources;
+    String str3;
+    String languages;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_review);
+        text=findViewById(R.id.txt);
         Intent intent=getIntent();
         str1=intent.getStringExtra("val");
+        String languages = intent.getExtras().getString("language");
+        if(languages.equals("ENGLISH")) {
+
+            context = LocalHelper.setLocale(showReview.this, "en");
+            resources = context.getResources();
+            text.setText(resources.getString(R.string.reviews));
+            str3="ENGLISH";
+        }
+
+        if(languages.equals("اردو")) {
+
+            context = LocalHelper.setLocale(showReview.this, "an");
+            resources = context.getResources();
+            text.setText(resources.getString(R.string.reviews));
+            str3="اردو";
+        }
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getReadableDatabase();
         activity = this;
@@ -54,7 +79,7 @@ public class showReview extends AppCompatActivity {
                 }
 
                 str2=cr.getString(1);
-               review2 mObj = new review2(str2,str);
+                review2 mObj = new review2(str2,str);
                 rev.add(mObj);
             }
 

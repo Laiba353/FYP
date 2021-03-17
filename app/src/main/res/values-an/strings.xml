@@ -26,4 +26,38 @@
     <string name="password1">اپنا پاس ورڈ درج کریں</string>
     <string name="number">اپنا رابطہ نمبر درج کریں</string>
     <string name="savedetails"> تفصیلات محفوظ کریں</string>
+
+    <string name="heading1"> دودھ کی تفصیلات</string>
+
+
+    <string name="quantity"> دودھ کی مقدار درج کریں</string>
+    <string name="price"> دودھ کی قیمت درج کریں</string>
+
+    <string name="cat"> دودھ کی قسم</string>
+
+    <string name="cowmilk">گائے کا دودھ</string>
+    <string name="goatmilk"> بکری کا دودھ</string>
+    <string name="baffalomillk"> بھینس کا دودھ</string>
+
+    <string name="SearchOrders"> آرڈر دیکھیں</string>
+    <string name="OtherMilkMans"> دوسرے دودھ بیچنے والے دیکھیں</string>
+    <string name="Reviews"> لوگوں کے جائزے</string>
+
+    <string name="NoOrder"> ابھی آپ کا کوئی گاہک نہیں ہے</string>
+    <string name="customers"> آپ کے گاہک</string>
+
+    <string name="milkmans1">  دودھ بیچنے والوں کی فہرست </string>
+    <string name="nomilkmans1">   اس ایپ پر ابھی کوئی دودھ فروش نہیں ہے </string>
+
+    <string name="reviews"> جائزے </string>
+
+    <string name="ordershistory">آرڈرز کی ہسٹری </string>
+    <string name="chatwithothers"> دوسروں کے ساتھ چیٹ کریں </string>
+
+    <string name="ListOfMilkMans"> دودھ بیچنے والوں کی فہرست </string>
+    <string name="searchbylocation">جگہ کے لحاظ سے تلاش کریں </string>
+
+
+
+
 </resources>

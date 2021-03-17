@@ -17,6 +17,7 @@
         android:layout_marginLeft="60dp"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
+        android:id="@+id/heading"
         />
     <EditText
         android:layout_width="160dp"
@@ -29,8 +30,6 @@
         android:textSize="17dp"
         android:gravity="center"
         android:id="@+id/milkquantitiy"
-
-
         />
     <EditText
         android:layout_width="160dp"
@@ -53,62 +52,65 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="20dp"
+        android:id="@+id/cat"
         />
     <RadioGroup
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/radiogroup"
-    android:orientation="vertical"
-
-    >
-    <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="Goat Milk"
-        android:textColor="@color/white"
-        android:layout_marginLeft="220dp"
-        android:buttonTint="@color/white"
-        android:id="@+id/goatmilk"
+        android:id="@+id/radiogroup"
+        android:orientation="vertical"
 
 
-        />
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        >
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-        android:text="Cow Milk"
-        android:textColor="@color/white"
-        android:layout_marginLeft="220dp"
-
-        android:buttonTint="@color/white"
-        android:id="@+id/cowmilk"
+            android:text="Goat Milk"
+            android:textColor="@color/white"
+            android:layout_marginLeft="220dp"
+            android:buttonTint="@color/white"
+            android:id="@+id/goatmilk"
 
 
 
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
+            android:text="Cow Milk"
+            android:textColor="@color/white"
+            android:layout_marginLeft="220dp"
 
-        />
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="Baffalo Milk"
-        android:textColor="@color/white"
-        android:layout_marginLeft="220dp"
-
-        android:buttonTint="@color/white"
-        android:id="@+id/baffalomilk"
-
-
-
-        />
+            android:buttonTint="@color/white"
+            android:id="@+id/cowmilk"
 
 
 
 
 
-</RadioGroup>
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Baffalo Milk"
+            android:textColor="@color/white"
+            android:layout_marginLeft="220dp"
+
+            android:buttonTint="@color/white"
+            android:id="@+id/baffalomilk"
+
+
+
+            />
+
+
+
+
+
+    </RadioGroup>
 
 
     <Button
@@ -122,6 +124,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/shape1"
         android:onClick="PostDetails"
+        android:id="@+id/savedetails"
 
         />
 
