@@ -32,7 +32,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         Intent intent = getIntent();
         String languages = intent.getExtras().getString("language");
-        Toast.makeText(this, languages, Toast.LENGTH_SHORT).show();
+
         if(languages.equals("ENGLISH"))
         {
 

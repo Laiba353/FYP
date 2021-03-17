@@ -41,7 +41,7 @@ public class LogInPage extends AppCompatActivity {
        Intent intent = getIntent();
         String languages = intent.getExtras().getString("language");
         check=intent.getStringExtra("Check");
-        Toast.makeText(this, languages, Toast.LENGTH_SHORT).show();
+
         if(languages.equals("ENGLISH"))
         {
 

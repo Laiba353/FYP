@@ -151,7 +151,7 @@ public class AddMilkInfo extends AppCompatActivity {
             String[] wherearg={str};
             Integer count= db.update(DatabaseContract.MilkMan.TABLE_NAME, args, DatabaseContract.MilkMan.COL_EMAIL + "=?",wherearg);
             if (count > 0) {
-                Toast.makeText(this, count+"  Records updated: " + type, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, count+"  Records updated: " , Toast.LENGTH_SHORT).show();
             }
             db.close();
 
