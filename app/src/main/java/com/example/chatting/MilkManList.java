@@ -251,6 +251,7 @@ public class MilkManList extends AppCompatActivity {
                         Intent intent = new Intent(MilkManList.this, MilkManDetails.class);
                         intent.putExtra("val", ss);
                         intent.putExtra("val2", str);
+                        intent.putExtra("language",lang);
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
                     }
@@ -322,6 +323,7 @@ public class MilkManList extends AppCompatActivity {
                 Intent inten = new Intent(this, PhoneNumberActivity.class);
                 //inten.putExtra("var", str);
                 startActivity(inten);
+                intent.putExtra("language",lang);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
