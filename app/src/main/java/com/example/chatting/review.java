@@ -46,8 +46,8 @@ ListView lv;
 
             context = LocalHelper.setLocale(review.this, "en");
             resources = context.getResources();
-            et.setText(resources.getString(R.string.typereview));
-            getSupportActionBar().setTitle("Reviews");
+            et.setHint(resources.getString(R.string.typereview));
+
 
             lang="ENGLISH";
         }
@@ -55,8 +55,8 @@ ListView lv;
         {
             context = LocalHelper.setLocale(review.this, "an");
             resources = context.getResources();
-            et.setText(resources.getString(R.string.typereview));
-            getSupportActionBar().setTitle("جائزے");
+            et.setHint(resources.getString(R.string.typereview));
+
             lang="اردو";
 
         }
