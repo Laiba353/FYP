@@ -253,7 +253,6 @@ public class MilkManList extends AppCompatActivity {
                         intent.putExtra("val2", str);
                         intent.putExtra("language",lang);
                         startActivity(intent);
-                        Toast.makeText(getApplicationContext(), "You Selected " + arrayList.get(position).getName() + " as Country", Toast.LENGTH_LONG).show();
                     }
                 });
 

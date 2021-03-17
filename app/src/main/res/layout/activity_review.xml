@@ -32,7 +32,6 @@
         android:src="@drawable/sendbtn"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
         ></ImageButton>
 
 </RelativeLayout>
