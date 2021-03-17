@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MilkManDetails">
+    tools:context=".MilkManDetails"
+    android:background="@color/black">
     <LinearLayout
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:orientation="vertical"
+        android:background="@color/black"
+        android:layout_marginTop="40dp"
 
         >
 
@@ -18,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="MILK MAN DETAILS"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/yellow"
             android:textSize="25dp"
             android:textStyle="bold"
             android:id="@+id/milkmandetail"
@@ -30,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="Milk Man Name"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
             android:id="@+id/name"/>
@@ -39,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18dp"
             android:id="@+id/txt1"/>
 
@@ -48,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="Location"
             android:textSize="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:id="@+id/location"/>
 
@@ -56,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18dp"
             android:id="@+id/txt2"/>
 
@@ -65,7 +68,7 @@
             android:layout_height="wrap_content"
             android:text="Contact Number"
             android:textSize="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:id="@+id/number"/>
 
@@ -73,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18dp"
             android:id="@+id/txt3"/>
 
@@ -82,7 +85,7 @@
             android:layout_height="wrap_content"
             android:text="Milk Type"
             android:textSize="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:id="@+id/milkquality"
             />
@@ -91,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18dp"
             android:id="@+id/txt4"/>
 
@@ -99,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Milk Quantity"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
             android:id="@+id/milkquantity"/>
@@ -108,7 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18dp"
             android:id="@+id/txt5"
 
@@ -119,7 +122,7 @@
             android:layout_height="wrap_content"
             android:text="Milk Price/Kg"
             android:textSize="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:id="@+id/milkprice"/>
 
@@ -127,7 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18dp"
             android:id="@+id/txt6"/>
         <Button
@@ -139,7 +142,7 @@
             android:textStyle="bold"
             android:onClick="onplace"
             android:id="@+id/placeorder"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="0dp"/>
         <Button
           android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
@@ -159,15 +162,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="340dp"
+
+
 
         >
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:src="@drawable/milkman"
             android:layout_marginTop="130dp"
+
+
+
             />
 
     </LinearLayout>
