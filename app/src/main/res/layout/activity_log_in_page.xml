@@ -6,17 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/purple_200"
-    tools:context=".LogInPage">
+    tools:context=".LogInPage"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="460dp"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@color/white"
+        android:background="@color/black"
         android:layout_marginBottom="100dp"
         android:layout_marginTop="100dp"
         android:layout_marginRight="50dp"
         android:layout_marginLeft="50dp"
+
         >
         <ImageView
             android:layout_height="120dp"
@@ -31,7 +33,7 @@
             android:layout_height="wrap_content"
             android:text="LOG IN"
             android:textColorHint="@color/black"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="25dp"
             android:textStyle="bold"
             android:id="@+id/txt1"
@@ -48,8 +50,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="User Name"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:inputType="text"
             android:id="@+id/name" />
         <EditText
@@ -58,8 +60,8 @@
             android:layout_height="wrap_content"
             android:hint="Password"
             android:inputType="text"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:id="@+id/password"/>
 
         <Button
