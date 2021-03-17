@@ -165,12 +165,12 @@ public class MilkManList extends AppCompatActivity {
 
                     }
                     else {
-                        if(languages.equals("ENGLISH")) {
+                       /* if(languages.equals("ENGLISH")) {
                             tv.setText("No MilkMan Found ");
                         }
                         if(languages.equals("اردو")){
                             tv.setText("کوئی دودھ فروش دستیاب نہیں ہے ");
-                        }
+                        }*/
                         Toast.makeText(MilkManList.this, "No MilkMan Found", Toast.LENGTH_LONG).show();
                     }
                 }
@@ -260,12 +260,12 @@ public class MilkManList extends AppCompatActivity {
 
         } else {
 
-            if(languages.equals("ENGLISH")) {
+            /*if(languages.equals("ENGLISH")) {
                 tv.setText("No MilkMan Found ");
             }
             if(languages.equals("اردو")){
                 tv.setText("کوئی دودھ فروش دستیاب نہیں ہے ");
-            }
+            }*/
             Toast.makeText(MilkManList.this, "No Record exist", Toast.LENGTH_LONG).show();
         }
 
