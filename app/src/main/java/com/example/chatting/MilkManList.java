@@ -323,7 +323,7 @@ public class MilkManList extends AppCompatActivity {
                 Intent inten = new Intent(this, PhoneNumberActivity.class);
                 //inten.putExtra("var", str);
                 startActivity(inten);
-                intent.putExtra("language",lang);
+                inten.putExtra("language",lang);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
