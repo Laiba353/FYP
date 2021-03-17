@@ -57,4 +57,18 @@
     <string name="searchbylocation">Search By Location </string>
 
 
+    <string name="milkmandetail">MILK MAN DETAILS </string>
+    <string name="named">Milk Man Name </string>
+    <string name="locationd">Location </string>
+    <string name="numberd">Contact Number</string>
+    <string name="quantityd">Milk Quantity </string>
+    <string name="qualityd">Milk Type</string>
+    <string name="priced"> Milk Price/Kg </string>
+
+    <string name="placeorder"> Place Order </string>
+    <string name="givereview"> Give Review </string>
+
+
+
+
 </resources>

@@ -57,6 +57,17 @@
     <string name="ListOfMilkMans"> دودھ بیچنے والوں کی فہرست </string>
     <string name="searchbylocation">جگہ کے لحاظ سے تلاش کریں </string>
 
+    <string name="milkmandetail">دودھ فروش کی تفصیلات </string>
+    <string name="named">دودھ فروش کا نام </string>
+    <string name="locationd">جگہ </string>
+    <string name="numberd">رابطہ نمبر</string>
+    <string name="quantityd">دودھ کی مقدار</string>
+    <string name="qualityd">دودھ کی قسم</string>
+    <string name="priced"> دودھ کی قیمت / کلوگرام </string>
+
+    <string name="placeorder"> اپنا آرڈر درج کریں</string>
+    <string name="givereview"> جائزہ دیں </string>
+
 
 
 
