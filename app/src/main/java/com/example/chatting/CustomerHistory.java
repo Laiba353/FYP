@@ -101,7 +101,7 @@ public class CustomerHistory extends AppCompatActivity {
 
                 context = LocalHelper.setLocale(CustomerHistory.this, "an");
                 resources = context.getResources();
-                tv.setText("آپ کی  ہسٹری  خالی ہے");
+                tv.setText(" ہسٹری  خالی ہے");
 
 
             }
