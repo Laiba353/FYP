@@ -54,6 +54,7 @@ public class MilkManDetails extends AppCompatActivity {
 
 
 
+
         if(languages.equals("ENGLISH"))
         {
 
@@ -62,7 +63,7 @@ public class MilkManDetails extends AppCompatActivity {
             heading.setText(resources.getString(R.string.milkmandetail));
             name.setText(resources.getString(R.string.named));
             location.setText(resources.getString(R.string.locationd));
-            number.setHint(resources.getString(R.string.numberd));
+            number.setText(resources.getString(R.string.numberd));
             quantily.setText(resources.getString(R.string.quantityd));
             quality.setText(resources.getString(R.string.qualityd));
             price.setText(resources.getString(R.string.priced));
@@ -77,7 +78,7 @@ public class MilkManDetails extends AppCompatActivity {
             heading.setText(resources.getString(R.string.milkmandetail));
             name.setText(resources.getString(R.string.named));
             location.setText(resources.getString(R.string.locationd));
-            number.setHint(resources.getString(R.string.numberd));
+            number.setText(resources.getString(R.string.numberd));
             quantily.setText(resources.getString(R.string.quantityd));
             quality.setText(resources.getString(R.string.qualityd));
             price.setText(resources.getString(R.string.priced));
