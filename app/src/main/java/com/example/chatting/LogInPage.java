@@ -100,7 +100,8 @@ public class LogInPage extends AppCompatActivity {
         {
             String[] columns = {"Email", "Name", "Password"};
             String[] values = {name.getText().toString(), password.getText().toString()};
-            if(check=="MilkMan") {
+            if(check.equals("MilkMan"))
+            {
 
                 Cursor cursor = db.query("MilkMan", columns, "Name=? AND Password=?", values, null, null, null);
                 if (cursor != null) {
