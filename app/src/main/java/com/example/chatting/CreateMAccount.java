@@ -121,7 +121,7 @@ public class CreateMAccount extends AppCompatActivity {
             Toast.makeText(this, "Please Fill All Fields", Toast.LENGTH_SHORT).show();
         } else {
 
-if(check=="MilkMan")
+if(check.equals("MilkMan"))
 {
 
             ContentValues values = new ContentValues();
@@ -141,7 +141,7 @@ if(check=="MilkMan")
             intent.putExtra("val1", Email);
             startActivity(intent);
 
-}else if(check=="Customer")
+}else if(check.equals("Customer"))
 {
     ContentValues values = new ContentValues();
     values.put(DatabaseContract.Customers.COL_NAME, Name);

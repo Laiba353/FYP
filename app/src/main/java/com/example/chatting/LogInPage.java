@@ -116,7 +116,7 @@ public class LogInPage extends AppCompatActivity {
                         Toast.makeText(LogInPage.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
                     }
                 }
-            }else if(check=="Customer")
+            }else if(check.equals("Customer"))
             {
                 Cursor cr=db.query(DatabaseContract.Customers.TABLE_NAME,columns,"Email=? AND Password=?",values,null,null,null);
                 if (cr.getCount() > 0) {
