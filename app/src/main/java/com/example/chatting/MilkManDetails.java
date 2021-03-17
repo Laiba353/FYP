@@ -117,6 +117,7 @@ Intent intn=new Intent(this,MapsActivity.class);
 intn.putExtra("milkman",str);
 intn.putExtra("customer",str2);
 intn.putExtra("milkmanL",s2);
+intn.putExtra("language",lang);
 startActivity(intn);
     }
     public void onReview(View v)
