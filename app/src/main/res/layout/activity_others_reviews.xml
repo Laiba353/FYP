@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".othersReviews">
+    tools:context=".othersReviews"
+    android:background="@color/black">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="36dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:text="Reviews"
+        android:textStyle="bold"
         android:id="@+id/txt"
         android:layout_gravity="center_horizontal"
         ></TextView>
@@ -19,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listview"
+        android:divider="@color/white"
 
         ></ListView>
 </LinearLayout>
